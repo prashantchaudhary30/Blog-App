@@ -4,6 +4,7 @@ const mongoose = require('mongoose')
 
 const authRoute = require('./routes/auth');
 const userRoute = require('./routes/users');
+const postRoute = require('./routes/posts');
 
 const dotenv = require('dotenv')
 dotenv.config();
@@ -17,6 +18,7 @@ mongoose.connect((process.env.MONGO_URL),{
 
 app.use("/auth",authRoute)
 app.use("/users",userRoute)
+app.use("/posts",postRoute)
 
 app.listen("5000",()=>{
     console.log("Server running");

@@ -15,7 +15,7 @@ router.put("/:id",async(req,res)=> {
         try {
             const updateUser = await User.findByIdAndUpdate(req.params.id, {
                 $set:req.body,
-            });
+            },{new:true});
 
             res.status(200).json(updateUser);
 
@@ -31,6 +31,7 @@ router.put("/:id",async(req,res)=> {
 })
 
 // DELETE
+
 
 
 module.exports = router
